@@ -27,7 +27,7 @@ module.exports = function (gulp, sep) {
 
 		// get submodules task name
 		function getName(name) {
-			return [submodule, name].join(sep);
+			return name.includes(sep) ? name : [submodule, name].join(sep);
 		}
 
 		submodules[submodule] = { tasks: [], ret: null };
